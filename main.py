@@ -27,6 +27,7 @@ if __name__ == '__main__':
     ActionChains(driver).move_to_element(
         driver.find_element_by_xpath(
             '//*[@id="mrsb"]/div[63]/label')).perform()
-    driver.find_element_by_xpath('//*[@id="tj_btn"]').click()
+    ActionChains(driver).move_to_element(
+        driver.find_element_by_xpath('//*[@id="tj_btn"]')).perform()
 
     driver.close()
