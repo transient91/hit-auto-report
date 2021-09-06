@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import os
 
 if __name__ == '__main__':
@@ -15,15 +16,17 @@ if __name__ == '__main__':
     driver.get("https://xg.hit.edu.cn/zhxy-xgzs/xg_mobile/xsMrsbNew")
     driver.implicitly_wait(30)
 
-    username = os.environ['username']
-    password = os.environ['password']
+    username = os.environ['USERNAME']
+    password = os.environ['PASSWORD']
 
     driver.find_element_by_xpath('//*[@id="username"]').send_keys(username)
     driver.find_element_by_xpath('//*[@id="password"]').send_keys(
         password, Keys.RETURN)
 
     driver.find_element_by_xpath('//*[@id="dtjwd"]/a').click()
-    driver.find_element_by_xpath('//*[@id="mrsb"]/div[63]/label').click()
+    ActionChains(driver).move_to_element(
+        driver.find_element_by_xpath(
+            '//*[@id="mrsb"]/div[63]/label')).perform()
     driver.find_element_by_xpath('//*[@id="tj_btn"]').click()
 
     driver.close()
