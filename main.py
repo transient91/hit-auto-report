@@ -15,8 +15,8 @@ if __name__ == '__main__':
     driver.get("https://xg.hit.edu.cn/zhxy-xgzs/xg_mobile/xsMrsbNew")
     driver.implicitly_wait(30)
 
-    username = os.environ['username']
-    password = os.environ['password']
+    username = os.environ['USERNAME']
+    password = os.environ['PASSWORD']
 
     driver.find_element_by_xpath('//*[@id="username"]').send_keys(username)
     driver.find_element_by_xpath('//*[@id="password"]').send_keys(
