@@ -26,7 +26,7 @@ if __name__ == '__main__':
     js = 'document.getElementById("dtjwd").firstElementChild.innerHTML="黑龙江省哈尔滨市南岗区"'
     driver.execute_script(js)
 
-    driver.find_element_by_xpath('//*[@id="dtjwd"]/a').click()
+    # driver.find_element_by_xpath('//*[@id="dtjwd"]/a').click()
     ActionChains(driver).move_to_element(
         driver.find_element_by_xpath(
             '//*[@id="mrsb"]/div[63]/label')).perform()
